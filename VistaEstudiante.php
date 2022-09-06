@@ -39,6 +39,7 @@
     <h3>LISTADO DE ESTUDIANTES</h3>
     <hr>
 
+    
 
     <table border="1">
         <th>NOMBRE</th>
@@ -52,8 +53,8 @@
         $ListaEstudiantes = $Estudiante->ListarEstudiantes();
         while($Estudiantes = mysqli_fetch_assoc($ListaEstudiantes))
         {?>
-          <tr>
-                <td>  <?php echo $Estudiantes['nombre'] ?> </td>
+          <tr class="table-secondary">
+                <td class=table-warning>  <?php echo $Estudiantes['nombre'] ?> </td>
                 <td>  <?php echo $Estudiantes['apellidos'] ?> </td>
                 <td>  <?php echo $Estudiantes['direccion'] ?> </td>
                 <td>  <?php echo $Estudiantes['telefono'] ?> </td>
