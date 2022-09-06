@@ -45,8 +45,9 @@
     <div class="container">
         <div class="row">
             <div class="col">
-
+        
         <table  border="1">
+            <table "tabl">
         <th>NOMBRE</th>
         <th>APELLIDOS</th>
         <th>DIRECCION</th>
@@ -58,8 +59,8 @@
         $ListaEstudiantes = $Estudiante->ListarEstudiantes();
         while($Estudiantes = mysqli_fetch_assoc($ListaEstudiantes))
         {?>
-          <tr  >
-                <td class="table-info">  <?php echo $Estudiantes['nombre'] ?> </td>
+          <tr>
+                <td class="info">  <?php echo $Estudiantes['nombre'] ?> </td>
                 <td class="table-warning">  <?php echo $Estudiantes['apellidos'] ?> </td>
                 <td class="table-danger">  <?php echo $Estudiantes['direccion'] ?> </td>
                 <td class="table-success">  <?php echo $Estudiantes['telefono'] ?> </td>
