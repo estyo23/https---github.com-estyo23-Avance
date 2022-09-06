@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel='stylesheet' href="styles.css">
+    <script src="node-modules/bootstrap/dist/js/bootstrap.min.js">
+     </script>
 </head>
 <body>
     <p>
@@ -39,9 +42,11 @@
     <h3>LISTADO DE ESTUDIANTES</h3>
     <hr>
 
-    
+    <div class="container">
+        <div class="row">
+            <div class="col">
 
-    <table border="1">
+        <table  border="1">
         <th>NOMBRE</th>
         <th>APELLIDOS</th>
         <th>DIRECCION</th>
@@ -53,17 +58,23 @@
         $ListaEstudiantes = $Estudiante->ListarEstudiantes();
         while($Estudiantes = mysqli_fetch_assoc($ListaEstudiantes))
         {?>
-          <tr class="table-secondary">
-                <td class=table-warning>  <?php echo $Estudiantes['nombre'] ?> </td>
-                <td>  <?php echo $Estudiantes['apellidos'] ?> </td>
-                <td>  <?php echo $Estudiantes['direccion'] ?> </td>
-                <td>  <?php echo $Estudiantes['telefono'] ?> </td>
-                <td>Editar</td>
-                <td>Eliminar</td>
+          <tr  >
+                <td class="table-info">  <?php echo $Estudiantes['nombre'] ?> </td>
+                <td class="table-warning">  <?php echo $Estudiantes['apellidos'] ?> </td>
+                <td class="table-danger">  <?php echo $Estudiantes['direccion'] ?> </td>
+                <td class="table-success">  <?php echo $Estudiantes['telefono'] ?> </td>
+                <td  class="table-info">Editar</td>
+                <td class="table-danger">Eliminar</td>
           </tr>
           
        <?php } ?>
     
     </table>
+
+     </div>
+  </div>
+</div>
+
+    
 </body>
 </html>
