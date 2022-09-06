@@ -22,7 +22,7 @@ class Estudiante
        /*CONEXION A LA BASE DE DATOS*/ 
        $nuevaConexion = new conexion();
        $ComandoConexion = $nuevaConexion->Conectar();
-       $ComandoConexion->query("insert into estudiantes (apellidos,nombre,direccion,telefono) values ("."'".$_POST['apellidos']."','".$_POST['nombre']."','".$_POST['direccion']."','".$_POST['telefono']."')" );
+       $ComandoConexion->query("insert into controlestudiantes (apellidos,nombre,direccion,telefono) values ("."'".$_POST['apellidos']."','".$_POST['nombre']."','".$_POST['direccion']."','".$_POST['telefono']."')" );
 
        if(!$ComandoConexion)
        {
@@ -35,7 +35,7 @@ class Estudiante
     {
       $OtraConexion = new conexion();
       $nuevoComando = $OtraConexion->Conectar();
-      $resultado = $nuevoComando->query("Select * from estudiantes");
+      $resultado = $nuevoComando->query("Select * from controlestudiantes");
       if(!$resultado)
       {
         echo "Error Al intentar realizar Consulta de Estudiantes...".mysqli_error($nuevoComando);
