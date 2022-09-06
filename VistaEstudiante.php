@@ -6,13 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel='stylesheet' href="styles.css">
-    <script src="node-modules/bootstrap/dist/js/bootstrap.min.js">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
      </script>
 </head>
 <body>
-    <p>
+    
+<div class="container bg-primary">
         <h2>INGRESO DE DATOS DEL ESTUDIANTE</h2>
-    </p>
+
+</div>
+<div class="containar">
+<div  class=row >
+    
+    <div class="column-4">  </div>
+    <div class="column-4">
+        
     <form action="EstudianteController.php" method="post">
         <p>
             <label for="apellidos">Apellidos</label> apellidos
@@ -38,16 +46,21 @@
             <input type="submit" value="Guardar Registro">
         </p>
     </form>
+</div>
+    <div class="column-4">  </div>
+</div>
+    
+
+    
+</div>
     <hr>
     <h3>LISTADO DE ESTUDIANTES</h3>
     <hr>
 
-    <div class="container">
-        <div class="row">
-            <div class="col">
+    
         
         <table  border="1">
-            <table "tabl">
+            
         <th>NOMBRE</th>
         <th>APELLIDOS</th>
         <th>DIRECCION</th>
@@ -60,21 +73,19 @@
         while($Estudiantes = mysqli_fetch_assoc($ListaEstudiantes))
         {?>
           <tr>
-                <td class="info">  <?php echo $Estudiantes['nombre'] ?> </td>
-                <td class="table-warning">  <?php echo $Estudiantes['apellidos'] ?> </td>
-                <td class="table-danger">  <?php echo $Estudiantes['direccion'] ?> </td>
-                <td class="table-success">  <?php echo $Estudiantes['telefono'] ?> </td>
-                <td  class="table-info">Editar</td>
-                <td class="table-danger">Eliminar</td>
+                <td >  <?php echo $Estudiantes['nombre'] ?> </td>
+                <td >  <?php echo $Estudiantes['apellidos'] ?> </td>
+                <td>  <?php echo $Estudiantes['direccion'] ?> </td>
+                <td >  <?php echo $Estudiantes['telefono'] ?> </td>
+                <td >Editar</td>
+                <td >Eliminar</td>
           </tr>
           
        <?php } ?>
     
     </table>
 
-     </div>
-  </div>
-</div>
+    
 
     
 </body>
