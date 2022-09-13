@@ -58,4 +58,20 @@ class Estudiante
       $nuevoComando->query("Update estudiantes set apellidos="."'".$apel."',nombre="."'".$nom."',direccion="."'".$dir."',telefono="."'".$tel."'"." where idEstudiante = $id");
     }
 
+    public function FiltrarEstudiantes($eli)
+    {
+      $nuevaConexion = new conexion();
+      $nuevoComando = $nuevaConexion->Conectar();
+      $resultado = $nuevoComando->query("Select * from  controlestudiantes where Eliminar=$eli");
+      return $resultado; 
+    }
+
+    public function EditarEliminarEstudiante($eli,$apel,$nom,$dir,$tel)
+    {
+      $nuevaConexion = new conexion();
+      $nuevoComando = $nuevaConexion->Conectar();
+      $nuevoComando->query("Update estudiantes set apellidos="."'".$apel."',nombre="."'".$nom."',direccion="."'".$dir."',telefono="."'".$tel."'"." where Eliminar = $eli");
+    }
+    
+
 }
