@@ -12,7 +12,7 @@
                             include_once "EstudianteModel.php";
                             $nuevoEstudiante = new Estudiante();
                             /*FILTRAR AL ESTUDIANTE SEGUN ID ENVIADO*/
-                            $resultado = $nuevoEstudiante->FiltrarEstudiantes($_GET[' eli']);
+                            $resultado = $nuevoEstudiante->FiltrarEstudiantes($_GET[' $ideli']);
 
                             while($resultadoFiltrado = mysqli_fetch_assoc($resultado))
                             {
@@ -42,7 +42,7 @@
                                 </p>
 
                                  <p>
-                                    <input type="hidden" name="Elimi" 
+                                    <input type="hidden" name="idLEli" 
                                     value="<?php echo $resultadoFiltrado[' Eliminar ']?>">
                                  </p>   
                             <?php

@@ -47,9 +47,14 @@ class Estudiante
     {
       $nuevaConexion = new conexion();
       $nuevoComando = $nuevaConexion->Conectar();
-      $resultado = $nuevoComando->query("Select * from  controlestudiantes where idEstudiante=$id");
+      $resultado = $nuevoComando->query("Select * from controlestudiantes where idEstudiante=$id");
+  
+      
+      
       return $resultado; 
     }
+
+    
 
     public function EditarEstudiante($id,$apel,$nom,$dir,$tel)
     {
@@ -58,20 +63,15 @@ class Estudiante
       $nuevoComando->query("Update estudiantes set apellidos="."'".$apel."',nombre="."'".$nom."',direccion="."'".$dir."',telefono="."'".$tel."'"." where idEstudiante = $id");
     }
 
-    public function FiltrarEstudiantes($eli)
+    public function EditarEliminarEstudiante($id,$apel,$nom,$dir,$tel)
     {
       $nuevaConexion = new conexion();
       $nuevoComando = $nuevaConexion->Conectar();
-      $resultado = $nuevoComando->query("Select * from  controlestudiantes where Eliminar=$eli");
-      return $resultado; 
+      $nuevoComando->query("Update estudiantes set apellidos="."'".$apel."',nombre="."'".$nom."',direccion="."'".$dir."',telefono="."'".$tel."'"." where Eliminar = $id");
     }
 
-    public function EditarEliminarEstudiante($eli,$apel,$nom,$dir,$tel)
-    {
-      $nuevaConexion = new conexion();
-      $nuevoComando = $nuevaConexion->Conectar();
-      $nuevoComando->query("Update estudiantes set apellidos="."'".$apel."',nombre="."'".$nom."',direccion="."'".$dir."',telefono="."'".$tel."'"." where Eliminar = $eli");
-    }
+    
+    
     
 
 }
