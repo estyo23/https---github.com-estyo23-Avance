@@ -77,7 +77,7 @@
                 <td >  <?php echo $Estudiantes['apellidos'] ?> </td>
                 <td>  <?php echo $Estudiantes['direccion'] ?> </td>
                 <td >  <?php echo $Estudiantes['telefono'] ?> </td>
-                <td >Editar</td>
+                <td><a href="VistaEditarEstudiante.php?idEst=<?php echo $Estudiantes['idEstudiante'];?>">EDITAR</a></td>
                 <td >Eliminar</td>
           </tr>
           
