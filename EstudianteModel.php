@@ -47,8 +47,8 @@ class Estudiante
     {
       $nuevaConexion = new conexion();
       $nuevoComando = $nuevaConexion->Conectar();
-      $resultado = $nuevoComando->query("Select * from estudiantes where idEstudiante=$id");
-      return $resultado;
+      $resultado = $nuevoComando->query("Select * from  controlestudiantes where idEstudiante=$id");
+      return $resultado; 
     }
 
     public function EditarEstudiante($id,$apel,$nom,$dir,$tel)
