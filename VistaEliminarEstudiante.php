@@ -12,7 +12,7 @@
                             include_once "EstudianteModel.php";
                             $nuevoEstudiante = new Estudiante();
                             /*FILTRAR AL ESTUDIANTE SEGUN ID ENVIADO*/
-                            $resultado = $nuevoEstudiante->FiltrarEstudiantes($_GET[' $ideli']);
+                            $resultado = $nuevoEstudiante->FiltrarEstudiantes($_GET[' idEst']);
 
                             while($resultadoFiltrado = mysqli_fetch_assoc($resultado))
                             {
