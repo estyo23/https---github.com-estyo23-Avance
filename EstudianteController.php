@@ -12,3 +12,10 @@ if(isset($_POST['btnEditar']))
  header('Location: vistaEstudiante.php');
         
 }
+else
+if(isset($_POST['btnEliminar']))
+{
+ $nuevoEstudiante->EditarEliminarEstudiante($_POST['idStudent'],$_POST['txtapellidos'],$_POST['txtnombre'],$_POST['direccion'],$_POST['telefono']); 
+ header('Location: vistaEstudiante.php');
+        
+}
